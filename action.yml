@@ -1,0 +1,36 @@
+name: "Add Changelog Entry"
+description: "Auto-format & add entries to your Changelog file"
+
+author: Claudio Dekker <claudio@ubient.net>
+
+inputs:
+  file:
+    required: false
+    default: "./CHANGELOG.md"
+    description: "The changelog file"
+  release:
+    required: true
+    description: "The changelog section to add the entry to"
+  description:
+    required: true
+    description: "The PR description to parse details from"
+  entry-title:
+    required: true
+    description: "The entry title to add to the changelog section"
+  entry-link:
+    required: false
+    description: "The link to add to the entry"
+
+branding:
+  icon: "align-right"
+  color: "gray-dark"
+
+runs:
+  using: "docker"
+  image: "docker://ghcr.io/bloom/changelog-updater:latest"
+  args:
+    - ${{ inputs.file }}
+    - ${{ inputs.release }}
+    - ${{ inputs.description }}
+    - ${{ inputs.entry-title }}
+    - ${{ inputs.entry-link }}
