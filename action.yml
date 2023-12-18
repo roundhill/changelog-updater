@@ -27,7 +27,7 @@ branding:
 
 runs:
   using: "docker"
-  image: "docker://ghcr.io/bloom/changelog-updater:latest"
+  image: "docker://ghcr.io/roundhill/changelog-updater:latest"
   args:
     - ${{ inputs.file }}
     - ${{ inputs.release }}
