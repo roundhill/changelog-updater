@@ -1,8 +1,8 @@
 FROM composer:2
 
-LABEL repository="https://github.com/claudiodekker/changelog-updater"
-LABEL homepage="https://github.com/claudiodekker/changelog-updater"
-LABEL maintainer="Claudio Dekker <claudio@ubient.net>"
+LABEL repository="https://github.com/bloom/changelog-updater"
+LABEL homepage="https://github.com/bloom/changelog-updater"
+LABEL maintainer="Automattic"
 
 RUN mkdir -p /app
 WORKDIR /app
